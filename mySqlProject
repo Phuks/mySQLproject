@@ -1,0 +1,41 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.01 sec)
+
+mysql> create database student;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use student;
+Database changed
+mysql> CREATE TABLE STUDENTS(
+    -> ID INT
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 2
+mysql> CREATE TABLE STUDENTS(
+    -> ID INT NOT NULL,
+    -> NAME VARCHAR(20) NOT NULL,
+    -> AGE INT NOT NULL,
+    -> COURSE CHAR(20) NOT NULL,
+    -> PRIMARY KEY (ID)
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> DESC STUDENTS;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| ID     | int         | NO   | PRI | NULL    |       |
+| NAME   | varchar(20) | NO   |     | NULL    |       |
+| AGE    | int         | NO   |     | NULL    |       |
+| COURSE | char(20)    | NO   |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql>
